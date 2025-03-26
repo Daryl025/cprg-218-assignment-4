@@ -9,15 +9,13 @@ function getRandomJoke(){
         if (data.type === 'single'){
             jokeContainer.textContent = data.joke;
         } else if (data.type === 'twopart'){
-            jokeContainer.innerHTMLn= `${data.setup}<span style="color: gray;">...</span>${data.delivery}`;
+            jokeContainer.innerHTML= `${data.setup}<span style="color: gray;">...</span>${data.delivery}`;
         }
     })
     .catch(() => {
           jokeContainer.textContent = 'something went wrong.';
     });
 }
-
-
 
 //from specific category
 
@@ -29,7 +27,7 @@ function getCategoryJoke(Category)
         if (data.type === 'single'){
             jokeContainer.textContent = data.joke;
         } else if (data.type === 'twopart') {
-            jokeContainer.innerHTMLn= `${data.setup}<span style="color: gray;">...</span>${data.delivery}`;
+            jokeContainer.innerHTML= `${data.setup}<span style="color: gray;">...</span>${data.delivery}`;
         }
     })
     .catch(() => {
@@ -40,33 +38,29 @@ function getCategoryJoke(Category)
 
 
 
-
-
-// Event listeners for each button. When a button is clicked, we get a joke from the respective category
-document.getElementById('programming-btn').addEventListener('click', function() {
-    pageTitle.textContent = 'A Random Programming Joke';
+document.getElementById('programming-btn').addEventListener('click',function(){
+    pageTitle.textContent = 'A random programmimg joke';
     getCategoryJoke('Programming');
 });
 
-document.getElementById('misc-btn').addEventListener('click', function() {
-    pageTitle.textContent = 'A Random Misc Joke';
+document.getElementById('misc-btn').addEventListener('click',function(){
+    pageTitle.textContent = 'A random Misc joke';
     getCategoryJoke('Misc');
 });
 
-document.getElementById('pun-btn').addEventListener('click', function() {
-    pageTitle.textContent = 'A Random Pun';
-    getCategoryJoke('Pun');
+document.getElementById('pun-btn').addEventListener('click',function(){
+    pageTitle.textContent = 'A random pun';
+    getCategoryJoke('pun');
 });
 
-document.getElementById('spooky-btn').addEventListener('click', function() {
-    pageTitle.textContent = 'A Random Spooky Joke';
-    getCategoryJoke('Spooky');
+document.getElementById('spooky-btn').addEventListener('click',function(){
+    pageTitle.textContent = 'A random spooky joke';
+    getCategoryJoke('spooky');
 });
 
-document.getElementById('christmas-btn').addEventListener('click', function() {
-    pageTitle.textContent = 'A Random Christmas Joke';
+document.getElementById('christmas-btn').addEventListener('click',function(){
+    pageTitle.textContent = 'A random spooky joke';
     getCategoryJoke('Christmas');
 });
 
-// When the page loads, we get a random joke from the "Any" category
 getRandomJoke();
