@@ -17,7 +17,7 @@ function getRandomJoke(){
     });
 }
 
-//from specific category
+///from specific category
 
 function getCategoryJoke(Category)
 {
